@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Veneridze\LaravelMarker\Models\Marker;
+use Illuminate\Database\Migrations\Migration;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('model_markers', function (Blueprint $table) {
+            $table->id();
+            $table->json('payload')->nullable();
+            $table->foreignIdFor(Marker::class)->constrained();
+            $table->morphs('model');
+            $table->year('year');
+            $table->string('comment')->nullable();
+            $table->unsignedTinyInteger('month');
+            $table->unsignedTinyInteger('day');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('model_markers');
+    }
+};

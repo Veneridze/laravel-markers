@@ -1,28 +1,23 @@
 <?php
-namespace Veneridze\LaravelQuestion;
+namespace Veneridze\LaravelMarker;
 
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
-class QuestionProvider extends PackageServiceProvider
+class MarkerProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-questions')
+            ->name('laravel-markers')
             //->hasConfigFile()
             ->hasMigrations([
-                'create_anwers_table',
-                'create_attempts_table',
-                'create_options_table',
-                'create_questions_options_table',
-                'create_questions_table',
-                'create_quiz_marks',
-                'create_quizes_table',
+                'create_markers_table',
+                'create_model_markers_table',
             ])
-            ->publishesServiceProvider('QuestionProvider')
+            ->publishesServiceProvider('MarkerProvider')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command
                     //->publishConfigFile()
