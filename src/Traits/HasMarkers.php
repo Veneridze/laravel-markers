@@ -22,10 +22,10 @@ trait HasMarkers {
         return $markers->get();
     }
     public function markers(): MorphMany {
-        return $this->morphMany(Marker::class, 'model');
+        return $this->morphMany(ModelMarker::class, 'model');
     }
 
-    public function addMarker(Marker $marker, ?string $comment = null, ?int $year = null, ?int $month = null, ?int $day = null): ModelMarker {
+    public function addMarker(Marker $marker, int $year, int $month, int $day, ?string $comment = null): ModelMarker {
         return $this->markers()->create([
             'marker_id' => $marker->id,
             'comment' => $comment,
