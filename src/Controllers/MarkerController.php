@@ -17,7 +17,8 @@ class MarkerController extends \Illuminate\Routing\Controller
         $mark = $model->addMarker($marker, $request->input('year'),$request->input('month'),$request->input('day'),$request->input('comment'),);
         return [
             "id" => $mark->id,
-            "value" => $mark->name,
+            "letter" => $mark->marker->letter, 
+            "value" => $mark->marker->name,
             "comment" => $mark->comment,
             "user" => [
                 "id" => 1,
