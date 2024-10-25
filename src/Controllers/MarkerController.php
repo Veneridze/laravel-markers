@@ -1,5 +1,5 @@
 <?php
-namespace Veneridze\LaravelQuestion\Controllers;
+namespace Veneridze\LaravelMarker\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Veneridze\LaravelMarker\Models\Marker;

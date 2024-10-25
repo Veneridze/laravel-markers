@@ -22,10 +22,10 @@ class MarkerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'comment' => ['nullable', 'text', 'max:255'],
-            'day' => ['requried', 'integer', 'min:1', 'max:31'],
-            'month' => ['requried', 'integer', 'min:1', 'max:12'],
-            'year' => ['requried', 'integer', 'min:2024', 'max:2030'],
+            'comment' => ['nullable', 'string', 'max:255'],
+            'day' => ['required', 'integer', 'min:1', 'max:31'],
+            'month' => ['required', 'integer', 'min:1', 'max:12'],
+            'year' => ['required', 'integer', 'min:2024', 'max:2030'],
         ];
     }
 }
