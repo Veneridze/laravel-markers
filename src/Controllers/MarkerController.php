@@ -12,7 +12,7 @@ class MarkerController extends \Illuminate\Routing\Controller
 
     public function store(WithMarksInterface $model, Marker $marker, MarkerRequest $request): RedirectResponse
     {
-        $model->addMarker($marker);
+        $model->addMarker($marker, $request->input('year'),$request->input('month'),$request->input('day'),$request->input('comment'),);
         return back();
     }
 
