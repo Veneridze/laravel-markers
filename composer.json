@@ -1,6 +1,6 @@
 {
-    "name": "veneridze/laravel-quiz",
-    "description": "Create test with questions and answers. Get test results",
+    "name": "veneridze/laravel-markers",
+    "description": "Assign markers to models",
     "require": {
         "php": ">=8.2",
         "spatie/laravel-model-info": "^2.0",
@@ -11,7 +11,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Veneridze\\LaravelQuestion\\QuestionProvider"
+                "Veneridze\\LaravelMarker\\MarkerProvider"
             ]
         }
     },
