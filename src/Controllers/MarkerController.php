@@ -21,8 +21,8 @@ class MarkerController extends \Illuminate\Routing\Controller
             "value" => $mark->marker->name,
             "comment" => $mark->comment,
             "user" => [
-                "id" => 1,
-                "name" => "Петров"
+                "id" => $mark->user->id,
+                "name" => $mark->user->shortName()
             ],
             "created_at" => $mark->created_at
         ];
