@@ -24,7 +24,7 @@ class MarkerController extends \Illuminate\Routing\Controller
                 "id" => 1,
                 "name" => "Петров"
             ],
-            "created_at" => $mark->created_at->format('Y-m-d')
+            "created_at" => $mark->created_at
         ];
     }
 

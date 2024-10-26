@@ -1,6 +1,7 @@
 <?php
 namespace Veneridze\LaravelMarker\Traits;
 
+use Auth;
 use Illuminate\Support\Collection;
 use Veneridze\LaravelMarker\Models\Marker;
 use Veneridze\LaravelMarker\Models\ModelMarker;
@@ -32,6 +33,7 @@ trait HasMarkers {
             'year' => $year,
             'month' => $month,
             'day' => $day,
+            'user_id' => Auth::id()
         ]);
     }
 }
